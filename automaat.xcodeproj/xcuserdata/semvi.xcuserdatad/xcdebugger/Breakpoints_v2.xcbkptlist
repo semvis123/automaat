@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9221E368-FDDD-460E-B8B2-13ED5DADBD51"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/ImageFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getImageUrls(query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532 - 2dae016bf94b58ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532 - 6888576e84ac9cef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "356">
+               </Location>
+               <Location
+                  uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532 - c9077c6cd98122ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532 - 6888576e84ac9cef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "8BD7BF0D-6DC0-4589-809E-A8B25B36F532 - c9077c6cd98122ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/ImageFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getImageUrls(query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6 - 2dae016bf94b5eba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1212">
+               </Location>
+               <Location
+                  uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6 - 6888576e84ac9ab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6 - c9077c6cd98124b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6 - 6888576e84ac9ab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "3CBBE4FE-C808-4DCF-BE91-F74B39F3ECE6 - c9077c6cd98124b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD70162C-EE62-4033-A1EC-BA5535EAD41F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/ImageFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getImageUrls(query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD70162C-EE62-4033-A1EC-BA5535EAD41F - 6888576e84ac995d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "DD70162C-EE62-4033-A1EC-BA5535EAD41F - 6888576e84ac995d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImageUrl(query: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52C86273-CD3E-4623-945F-720F4B37DFD3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Views/MapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/ImageFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getImage(query:cache:positive:negative:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - eec554d3e9974b24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - 967e8ffd9b5650d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - 1c08d6e87f885ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
