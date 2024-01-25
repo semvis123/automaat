@@ -25,21 +25,31 @@ struct AccountInfoResponse: Codable {
 }
 
 struct CustomerInfoResponse: Codable {
-    var id, nr: Int
-    var lastName, firstName, from: String
+    var id, nr: Int?
+    var lastName, firstName, from: String?
 }
 
 struct CarResponseElement: Codable {
-    var id: Int?
+    var id: Int64
     var brand, model: String?
     var fuel: Fuel?
     var options, licensePlate: String?
     var engineSize, modelYear: Int?
     var since: String?
-    var price, nrOfSeats: Int?
+    var price, nrOfSeats: Int64?
     var body: CarBody?
     var longitude, latitude: Float?
     var inspections, repairs, rentals: [String]? // guessed
+}
+
+struct RentalsResponseElement: Codable  {
+    var id: Int64
+    var code: String?
+    var longitude, latitude: Double
+    var fromDate, toDate: String
+    var state: String?
+    var inspections, customer : [String]?
+    var car: CarResponseElement?
 }
 
 enum CarBody: String, Codable {

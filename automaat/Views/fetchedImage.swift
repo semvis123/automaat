@@ -7,6 +7,11 @@ enum ImageFetchMode {
     case BrandLogo
 }
 
+/*
+    Fetches an image from the imagefetcher and displays it.
+    Displays a progress bar while loading.
+*/
+
 struct FetchedImage: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
     @Namespace var namespace

@@ -1,8 +1,7 @@
 import SwiftUI
-import SlidingTabBar
 import Map
 import MapKit
-
+import Foundation
 
 class ColorOverlay: NSObject, MKOverlay {
     let coordinate: CLLocationCoordinate2D
@@ -40,14 +39,16 @@ class ColorOverlayRenderer: MKOverlayRenderer {
 
 struct CurrentCarView: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
+    @EnvironmentObject var api: APIController
     @State var currPage: Int = 1
-    @State var car: Car? = nil
     @State var carImage: Data? = nil
     @State var pressedUnlockBtn = false
     @State var pressedUnlockBtnAnimating = false
     @State var regionVar: MKCoordinateRegion?
     @State var isPresentingConfirm = false
     @State var annotations: [CarMapAnnotation] = []
+    @State var car: Car? = nil
+    @State var rental: Rental? = nil
     var viewController: CarControlPageViewController
     var locationManager = CLLocationManager()
     
@@ -79,7 +80,14 @@ struct CurrentCarView: View {
                             .confirmationDialog("Weet je zeker dat je de sessie wilt sluiten?",
                                                 isPresented: $isPresentingConfirm) {
                                 Button("Stop huur sessie", role: .destructive) {
-                                    // stop session
+                                    Task {
+                                        do {
+                                            try await api.stopRental(rental: rental!)
+                                            self.car = nil
+                                        } catch {
+                                            print("could not stop it?")
+                                        }
+                                    }
                                 }
                             }
                         
@@ -192,6 +200,24 @@ struct CurrentCarView: View {
                 }
             } else {
                 Text("Er is geen actieve auto sessie.")
+            }
+        }
+        .onAppear() {
+            Task {
+                try await api.waitForRefresh()
+                rental = api.rentals.first(where: {
+                    $0.from != nil && Calendar.current.isDateInToday($0.from!) &&
+                    $0.state == "ACTIVE"
+                })
+                
+                if let rental = rental {
+                    car = api.cars.first(where: { $0.backendId == rental.car })
+                    regionVar = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: car!.latitude!.doubleValue, longitude: car!.longitude!.doubleValue),
+                                                   latitudinalMeters: 5000,
+                                                   longitudinalMeters: 5000)
+                    annotations = [CarMapAnnotation(car: car!)]
+                    viewController.setActiveRental(rental: rental)
+                }
             }
         }
     }

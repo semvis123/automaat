@@ -118,10 +118,10 @@ class ImageFetcher: ObservableObject {
                 continue
             }
             
-            let cacheEntry = ImageCache(context: PersistenceController.shared.container.viewContext)
+            let cacheEntry = ImageCache(context: vCtx)
             cacheEntry.imageBlob = cleanData
             cacheEntry.query = query
-            try? PersistenceController.shared.container.viewContext.save()
+            try? vCtx.save()
             
             await querySemaphore.release()
             return cleanData

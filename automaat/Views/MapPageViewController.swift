@@ -36,9 +36,10 @@ class MapPageViewController: UIViewController, UISheetPresentationControllerDele
         vc.didMove(toParent: self)
     }
     
-    func openSheet(car: Car, etaData: Binding<EtaData?>, onClose: @escaping () -> ()) {
+    func openSheet(api: APIController, car: Car, etaData: Binding<EtaData?>, onClose: @escaping () -> ()) {
         carSheetViewController = UIHostingController(rootView:
                                                         CarSheetView(
+                                                            api: api,
                                                             car: car,
                                                             etaData: etaData,
                                                             imageFetcher: imageFetcher!,

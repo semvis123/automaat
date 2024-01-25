@@ -3,6 +3,9 @@ import PhotosUI
 
 struct CarDamageReportView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var api: APIController
+    @EnvironmentObject var rental: Rental
+    
     @State var image: UIImage? = nil
     @State var description: String = ""
     @State var selectImage = false
@@ -48,8 +51,13 @@ struct CarDamageReportView: View {
         }
         .toolbar {
             Button("Verzenden") {
-                print("Sending....")
-                self.presentationMode.wrappedValue.dismiss()
+                Task {
+                    guard image != nil else {
+                        return
+                    }
+                    try await api.damageReport(rental: rental, description: description, image: image!.pngData()!)
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }
             .disabled(image == nil || description == "")
         }

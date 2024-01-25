@@ -1,6 +1,8 @@
 import SwiftUI
 
-
+/*
+    Clickable button that expands a view when clicked.
+*/
 struct ExpandViewer <Content: View>: View {
     var title: String
     @State private var isExpanded = false
@@ -44,9 +46,10 @@ struct ExpandViewer <Content: View>: View {
     }
 }
 
-
-
 struct CarServiceView: View {
+    var api: APIController
+    var rental: Rental
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -78,6 +81,8 @@ struct CarServiceView: View {
 
                 NavigationLink {
                     CarDamageReportView()
+                        .environmentObject(api)
+                        .environmentObject(rental)
                 } label: {
                     Text("Schade melden")
                         .frame(maxWidth: .infinity)
@@ -106,8 +111,4 @@ struct CarServiceView: View {
             }
         }
     }
-}
-
-#Preview {
-    CarServiceView()
 }

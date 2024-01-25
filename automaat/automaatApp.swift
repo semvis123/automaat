@@ -12,6 +12,12 @@ struct automaatApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(apiController)
                 .environmentObject(imageFetcher)
+                .onAppear {
+                    Task {
+                        try await apiController.refreshData()
+                        let success = try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+                    }
+                }
         }
     }
 }

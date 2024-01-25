@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81106DB2B61540B006CC4CC /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106DA2B61540B006CC4CC /* PasswordResetView.swift */; };
+		A81106DD2B616AA7006CC4CC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106DC2B616AA7006CC4CC /* RegistrationView.swift */; };
+		A81106E12B62BF15006CC4CC /* CarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106E02B62BF15006CC4CC /* CarFilterView.swift */; };
 		A817A5502B3384BB00ECF039 /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817A54F2B3384BB00ECF039 /* MapPageViewController.swift */; };
 		A817A5522B342B2A00ECF039 /* image+trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817A5512B342B2A00ECF039 /* image+trim.swift */; };
 		A819834D2B40590C00BD4D28 /* CarServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819834C2B40590C00BD4D28 /* CarServiceView.swift */; };
@@ -42,6 +45,7 @@
 		A8D268CD2B2B4A4D000BDAB5 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D268CC2B2B4A4D000BDAB5 /* SecureStorage.swift */; };
 		A8D268D02B2B4BC8000BDAB5 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = A8D268CF2B2B4BC8000BDAB5 /* KeychainAccess */; };
 		A8D268D42B2B7738000BDAB5 /* ApiResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D268D32B2B7738000BDAB5 /* ApiResponses.swift */; };
+		A8F5B4D22B580692006CC5B8 /* ObjectContext+deleteAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5B4D12B580692006CC5B8 /* ObjectContext+deleteAll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A81106DA2B61540B006CC4CC /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		A81106DC2B616AA7006CC4CC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		A81106E02B62BF15006CC4CC /* CarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterView.swift; sourceTree = "<group>"; };
 		A817A54F2B3384BB00ECF039 /* MapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
 		A817A5512B342B2A00ECF039 /* image+trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "image+trim.swift"; sourceTree = "<group>"; };
 		A819834C2B40590C00BD4D28 /* CarServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServiceView.swift; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 		A8D268C72B2B44C5000BDAB5 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		A8D268CC2B2B4A4D000BDAB5 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		A8D268D32B2B7738000BDAB5 /* ApiResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponses.swift; sourceTree = "<group>"; };
+		A8F5B4D12B580692006CC5B8 /* ObjectContext+deleteAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectContext+deleteAll.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,8 @@
 			children = (
 				A8BA9D4F2B266B01003BA0D0 /* AccountView.swift */,
 				A86A94B02B29D28600F49EB3 /* LoginView.swift */,
+				A81106DA2B61540B006CC4CC /* PasswordResetView.swift */,
+				A81106DC2B616AA7006CC4CC /* RegistrationView.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BA9D512B266B24003BA0D0 /* CarListView.swift */,
+				A81106E02B62BF15006CC4CC /* CarFilterView.swift */,
 			);
 			name = Cars;
 			sourceTree = "<group>";
@@ -287,6 +298,7 @@
 				A8D268CC2B2B4A4D000BDAB5 /* SecureStorage.swift */,
 				A817A5512B342B2A00ECF039 /* image+trim.swift */,
 				A81983552B45B87500BD4D28 /* Semaphore.swift */,
+				A8F5B4D12B580692006CC5B8 /* ObjectContext+deleteAll.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -433,6 +445,7 @@
 				A84B85F12B2097770032CDC7 /* automaatApp.swift in Sources */,
 				A8BA9D4C2B265927003BA0D0 /* SplashView.swift in Sources */,
 				A8BA9D522B266B24003BA0D0 /* CarListView.swift in Sources */,
+				A81106DD2B616AA7006CC4CC /* RegistrationView.swift in Sources */,
 				A8BA9D4E2B266AE9003BA0D0 /* MapView.swift in Sources */,
 				A8D268CD2B2B4A4D000BDAB5 /* SecureStorage.swift in Sources */,
 				A841F1F52B38CC43005A30C1 /* CarSheetView.swift in Sources */,
@@ -448,13 +461,16 @@
 				A84B85FD2B2097790032CDC7 /* automaat.xcdatamodeld in Sources */,
 				A8BA9D502B266B01003BA0D0 /* AccountView.swift in Sources */,
 				A841F2082B3CA97F005A30C1 /* CurrentCarView.swift in Sources */,
+				A81106E12B62BF15006CC4CC /* CarFilterView.swift in Sources */,
 				A819834D2B40590C00BD4D28 /* CarServiceView.swift in Sources */,
+				A8F5B4D22B580692006CC5B8 /* ObjectContext+deleteAll.swift in Sources */,
 				A8D268C62B2B3F18000BDAB5 /* APIController.swift in Sources */,
 				A84B85FA2B2097790032CDC7 /* Persistence.swift in Sources */,
 				A8D268D42B2B7738000BDAB5 /* ApiResponses.swift in Sources */,
 				A84B85F32B2097770032CDC7 /* ContentView.swift in Sources */,
 				A817A5502B3384BB00ECF039 /* MapPageViewController.swift in Sources */,
 				A86A94B92B29ECD800F49EB3 /* ImageFetcher.swift in Sources */,
+				A81106DB2B61540B006CC4CC /* PasswordResetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,6 @@ struct ContentView: View {
                 .tag(2)
             CarControlPageView()
                 .ignoresSafeArea(edges: .top)
-//                .edgesIgnoringSafeArea(.top)
                 .tabItem {
                     Label {
                         Text("Your car")
@@ -35,7 +34,12 @@ struct ContentView: View {
                     Label("Account", systemImage: "person.crop.circle.fill")
                 }
                 .tag(4)
+        }.onOpenURL { url in
+            if url.absoluteString.contains("passwordreset") || url.absoluteString.contains("activate") {
+                selection = 4
+            }
         }
+
     }
     
 }

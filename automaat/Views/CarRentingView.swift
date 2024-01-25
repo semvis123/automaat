@@ -1,12 +1,16 @@
 import SwiftUI
 
 struct CarRentingView: View {
+    @EnvironmentObject var api: APIController
+    @EnvironmentObject var imageFetcher: ImageFetcher
+    
     @StateObject var car: Car
     @State var carImage: Data? = nil
     @State var favorite = false
     @Binding var sheetPage: CarSheetPage
-    @EnvironmentObject var imageFetcher: ImageFetcher
     @Binding var image: Data?
+    @State var rentDate = Date.now
+    @State var rentError = false
     
     let animation: Namespace.ID
     var mapViewController: MapPageViewController
@@ -28,7 +32,7 @@ struct CarRentingView: View {
                     Text("\(car.brand ?? "") \(car.model ?? "")")
                         .font(.title2)
                         .matchedGeometryEffect(id: "carName", in: animation)
-                    Text("€\(car.price ?? 0 ),-")
+                    Text("€\(car.price)")
                         .matchedGeometryEffect(id: "carPrice", in: animation)
                 }
                 .padding([.leading])
@@ -42,7 +46,7 @@ struct CarRentingView: View {
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.bottom)
-                DatePicker(selection: .constant(.now),
+                DatePicker(selection: $rentDate,
                            in: Date()...Calendar.current.date(byAdding: .day, value: 7, to: Date())!,
                            displayedComponents: .date,
                            label: {}
@@ -50,9 +54,38 @@ struct CarRentingView: View {
                 .datePickerStyle(.graphical)
             }
             .padding()
-            
-            Spacer()
-            Button(action: mapViewController.closeSheet){
+            if rentError {
+                Text("Reserveren mislukt")
+                    .foregroundStyle(.red)
+                    .padding()
+            } else {
+                Spacer()
+            }
+            Button(action: {
+                Task {
+                    do {
+                        try await self.api.rentCar(car: car, date: rentDate)
+
+                        // schedule notification for when the car is ready
+                        let content = UNMutableNotificationContent()
+                        content.title = "Uw auto staat klaar!"
+                        content.subtitle = "\(car.brand ?? "") \(car.model ?? "")"
+
+                        var timeInterval = rentDate.timeIntervalSinceNow
+                        if timeInterval < 0 {
+                            timeInterval = 10
+                        }
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+                        let request = UNNotificationRequest(identifier: "rentalReady", content: content, trigger: trigger)
+                        try await UNUserNotificationCenter.current().add(request)
+                        
+                    } catch {
+                        rentError = true
+                    }
+                    mapViewController.closeSheet()
+                }
+            }) {
                 Text("Reserveer")
             }
             .buttonStyle(.borderedProminent)

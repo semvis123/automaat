@@ -6,6 +6,7 @@ enum CarSheetPage {
 }
 
 struct CarSheetView: View {
+    @StateObject var api: APIController
     @StateObject var car: Car
     @State var favorite = false
     @State var page = CarSheetPage.detail
@@ -38,5 +39,6 @@ struct CarSheetView: View {
             }
         }.animation(.default, value: page)
             .environmentObject(imageFetcher)
+            .environmentObject(api)
     }
 }

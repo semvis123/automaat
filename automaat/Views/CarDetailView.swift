@@ -3,7 +3,6 @@ import MapKit
 
 struct CarDetailView: View {
     @StateObject var car: Car
-    @State var favorite = false
     @State var carImage: Data? = nil
     @Binding var sheetPage: CarSheetPage
     @Binding var etaData: EtaData?
@@ -23,12 +22,13 @@ struct CarDetailView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: favorite ? "star.fill" :"star")
+                Image(systemName: car.favorite ? "star.fill" :"star")
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(.white )
                     .onTapGesture {
-                        favorite = !favorite
+                        car.favorite = !car.favorite
+                        try? PersistenceController.shared.container.viewContext.save()
                     }
                 Spacer()
                 Button(action: {
@@ -74,7 +74,7 @@ struct CarDetailView: View {
                     VStack(alignment: .leading) {
                         Text("Per dag")
                             .font(.footnote)
-                        Text("€\(car.price ?? 0 ),-")
+                        Text("€\(car.price ),-")
                             .font(.title)
                             .bold()
                             .fixedSize(horizontal: true, vertical: false)

@@ -17,14 +17,14 @@ struct CarListItemView: View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     FetchedImage(preset: .BrandLogo, car: car)
-                            .frame(width: 30, height: 30)
-                            .padding(3)
+                        .frame(width: 30, height: 30)
+                        .padding(3)
                     FetchedImage(preset: .Car, car: car)
                         .frame(width: 130, height: 80)
                         .padding(.vertical, 3)
                     Text("**\(car.model ?? "")**")
                         .foregroundStyle(.white)
-                    Text("€\(car.price ?? 0) / dag")
+                    Text("€\(car.price ) / dag")
                         .foregroundStyle(.white)
                 }
                 .padding()
@@ -41,6 +41,7 @@ struct CarListItemView: View {
     }
 }
 
+
 struct CarListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var imageFetcher: ImageFetcher
@@ -50,6 +51,8 @@ struct CarListView: View {
         animation: .default)
     private var cars: FetchedResults<Car>
     @State private var showingAlert = false
+    @State private var filter = CarFilter(onlyFavorite: false, sortKey: CarSortOption(label: "ID", comparable: { $0.backendId }) )
+    
     let columns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12)
@@ -58,17 +61,28 @@ struct CarListView: View {
         NavigationView {
             ScrollView(.vertical) {
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(cars) { (car: Car) in
+                    ForEach(cars.filter { car in
+                        if filter.onlyFavorite {
+                            return car.favorite
+                        }
+                        return true
+                    }.sorted { car1, car2 in
+                        filter.sortKey.comparable(car1) < filter.sortKey.comparable(car2)
+                    }) { car in
                         CarListItemView(car: car)
                     }
                 }
             }
             .navigationBarTitle("Auto's")
+            .padding(.horizontal)
+            .toolbar {
+                NavigationLink {
+                    CarFilterView(filter: $filter)
+                } label: {
+                    Image(systemName: "slider.horizontal.3")
+                }
+            }
         }
-        .padding(.horizontal)
     }
 }
 
-#Preview {
-    CarListView()
-}

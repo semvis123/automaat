@@ -1,10 +1,24 @@
 import Foundation
 import SwiftUI
 
+/*
+    View controller that has the responsibility of opening the car service sheet.
+*/
 class CarControlPageViewController: UIViewController {
     var sheet: UISheetPresentationController?
     var serviceSheet: UIHostingController<CarServiceView>?
     var mapViewController: UIHostingController<CurrentCarView>?
+    var api: APIController?
+    var rental: Rental?
+    
+    convenience init(api: APIController) {
+        self.init()
+        self.api = api
+    }
+    
+    func setActiveRental(rental: Rental) {
+        self.rental = rental
+    }
     
     
     override func viewDidLoad() {
@@ -28,7 +42,7 @@ class CarControlPageViewController: UIViewController {
     }
     
     func openSheet() {
-        serviceSheet = UIHostingController(rootView: CarServiceView())
+        serviceSheet = UIHostingController(rootView: CarServiceView(api: api!, rental: rental!))
         
         if let sheet = serviceSheet!.sheetPresentationController {
             sheet.detents = [.large()]
@@ -49,8 +63,10 @@ class CarControlPageViewController: UIViewController {
 }
 
 struct CarControlPageView: UIViewControllerRepresentable {
+    @EnvironmentObject var api: APIController
+    
     func makeUIViewController(context: Context) -> CarControlPageViewController {
-        CarControlPageViewController()
+        CarControlPageViewController(api: api)
     }
     
     func updateUIViewController(_ uiViewController: CarControlPageViewController, context: Context) {

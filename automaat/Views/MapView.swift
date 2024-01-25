@@ -29,6 +29,7 @@ struct CarMapAnnotation: Identifiable, Equatable {
 
 struct MapView: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
+    @EnvironmentObject var api: APIController
     @State var regionVar: MKCoordinateRegion?
     @State var annotations: [CarMapAnnotation] = []
     @State var sheetDetail: Car?
@@ -75,6 +76,7 @@ struct MapView: View {
                         
                         withAnimation {
                             activeLocation = location
+                            viewController.closeSheet()
                         }
                         
                         
@@ -100,7 +102,7 @@ struct MapView: View {
                         
                         sheetDetail = location.car
                         if sheetDetail != nil {
-                            viewController.openSheet(car: sheetDetail!, etaData: $etaData) {
+                            viewController.openSheet(api: api, car: sheetDetail!, etaData: $etaData) {
                                 activeLocation = nil
                                 route = nil
                             }

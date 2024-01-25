@@ -248,8 +248,8 @@
             filePath = "automaat/Views/MapView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -257,64 +257,234 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9"
+            uuid = "2C0F35D6-AB76-4F8E-88FB-97318DF3AADC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "automaat/Controllers/ImageFetcher.swift"
+            filePath = "automaat/Controllers/APIController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "getImage(query:cache:positive:negative:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "refreshData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "500DB540-803C-47C4-8935-D7AFA29FFBC4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/APIController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "refreshData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/APIController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "refreshDataBackend()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - eec554d3e9974b24"
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 86d75f5497ad24c5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  symbolName = "automaat.APIController.refreshDataBackend() async throws -&gt; ()"
                   moduleName = "automaat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - 967e8ffd9b5650d7"
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 4cb6e5b25f7bf1fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  symbolName = "(1) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
                   moduleName = "automaat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
-                  uuid = "894A8275-332F-4451-AA24-C100A2FEA5C9 - 1c08d6e87f885ed"
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - b3e4ae8c52f50d8a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for automaat.ImageFetcher.getImage(query: Swift.String, cache: Swift.Bool, sort: Swift.Bool) async -&gt; Foundation.Data"
+                  symbolName = "(2) await resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
                   moduleName = "automaat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/ImageFetcher.swift"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
                   offsetFromSymbolStart = "24">
                </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 8b2efeb47b863578"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 8b2efeb47b863578"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "2196">
+               </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 1ccde8255646b1a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - c1a6f3ce67ac7afe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 2362f14391c1983f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "09B50F0F-20EE-42EF-B0D7-2F25C61AC990 - 1cdef4c083fabe7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for automaat.APIController.refreshDataBackend() async throws -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Controllers/APIController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2DBE90A-5977-479B-B69C-96DEB9B8FDE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/APIController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "APIController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16543F22-FD12-424E-97CA-92157C8E0BA1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Controllers/APIController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "refreshData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE5E69E8-03C5-4758-A064-71E359AFD4B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "application(_:open:options:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
