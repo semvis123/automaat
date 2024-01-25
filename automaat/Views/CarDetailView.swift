@@ -100,9 +100,9 @@ struct CarDetailView: View {
                     HStack {
                         let iconSize = 40.00
                         let feature = [
-                            (Image("manual-gear"), "Manual"),
-                            (Image(systemName:"fuelpump"), "Gasoline"),
-                            (Image(systemName:"speedometer"), "210km/h")
+                            (Image("manual-gear"), ["Manual", "Automatic"][Int.random(in: 0...1)]),
+                            (Image(systemName:"fuelpump"), car.fuel?.lowercased().capitalized ?? "Onbekend"),
+                            (Image(systemName:"speedometer"), "\(Int.random(in: 130...300)) km/h"),
                         ]
                         ForEach(feature, id:\.1) { (f: (Image, String)) in
                             ZStack {

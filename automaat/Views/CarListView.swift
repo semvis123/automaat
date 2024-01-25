@@ -12,6 +12,48 @@ struct CarListItemView: View {
                 
                 FetchedImage(preset: .Car, car: car)
                     .frame(width: 300, height: 200)
+                
+                Text("€\(car.price ),-")
+                    .font(.title)
+                    .bold()
+                    .fixedSize(horizontal: true, vertical: false)
+                HStack {
+                    let iconSize = 40.00
+                    let feature = [
+                        (Image("manual-gear"), ["Manual", "Automatic"][Int.random(in: 0...1)]),
+                        (Image(systemName:"fuelpump"), car.fuel?.lowercased().capitalized ?? "Onbekend"),
+                        (Image(systemName:"speedometer"), "\(Int.random(in: 130...300)) km/h"),
+                    ]
+                    ForEach(feature, id:\.1) { (f: (Image, String)) in
+                        ZStack {
+                            Color.init(hue: 0, saturation: 0, brightness: 0.17)
+                            VStack {
+                                f.0
+                                    .resizable()
+                                    .frame(width: iconSize, height: iconSize)
+                                    .foregroundStyle(.white)
+                                    .padding(.bottom)
+                                Text(f.1)
+                            }
+                        }
+                        .frame(width: 100, height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.white, lineWidth: 1)
+                        )
+                    }
+                }
+            }
+            .toolbar {
+                Image(systemName: car.favorite ? "star.fill" :"star")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.white )
+                    .onTapGesture {
+                        car.favorite = !car.favorite
+                        try? PersistenceController.shared.container.viewContext.save()
+                    }
             }
         } label: {
             VStack(alignment: .leading) {

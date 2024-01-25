@@ -61,8 +61,9 @@ class APIController: ObservableObject {
         let ctx = PersistenceController.shared.container.viewContext;
 
         if loggedIn {
-    
-            let rentalResponse: [RentalsResponseElement] = try await getData(endpoint: "rentals")
+            let rentalResponse: [RentalsResponseElement] = try await getData(endpoint: "rentals", queryData: [
+                "customerId.equals": "\(customerInfo!.id!)"
+            ])
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale.autoupdatingCurrent
             dateFormatter.timeZone = TimeZone.current

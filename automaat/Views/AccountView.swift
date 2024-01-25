@@ -33,19 +33,22 @@ struct AccountView: View {
                             rental1.backendId > rental2.backendId
                         })) { rental in
                             HStack {
-                                let car = api.cars.first(where: { car in
+                                if let car = api.cars.first(where: { car in
                                     car.backendId == rental.car
-                                })
-                                
-                                FetchedImage(preset: .Car, car: car)
-                                    .frame(width: 50, height: 50)
-                                Text("\(car?.brand ?? "") \(car?.model ?? "")")
-                                    .frame(maxWidth: 200)
+                                }) {
+                                    FetchedImage(preset: .Car, car: car)
+                                        .frame(width: 50, height: 50)
+                                    Text("\(car.brand ?? "") \(car.model ?? "")")
+                                        .frame(maxWidth: 200)
+                                }
                                 Spacer()
                                 if rental.from != nil && rental.to != nil {
                                     Text(rental.from!.formatted(.dateTime.day().month()))
                                 }
                             }
+                        }
+                        if api.rentals.isEmpty {
+                            Text("Geen historie gevonden, reserveer je eerste rit!")
                         }
                     }
                     Spacer()
