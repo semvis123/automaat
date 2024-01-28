@@ -30,6 +30,8 @@ struct CarMapAnnotation: Identifiable, Equatable {
 struct MapView: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
     @EnvironmentObject var api: APIController
+    @Environment(\.theme) var theme: Theme
+    @Environment(\.colorScheme) var colorScheme
     @State var regionVar: MKCoordinateRegion?
     @State var annotations: [CarMapAnnotation] = []
     @State var sheetDetail: Car?
@@ -60,7 +62,7 @@ struct MapView: View {
                     VStack {
                         Image(systemName: "car.fill")
                             .resizable()
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? .white : theme.color)
                             .scaledToFit()
                             .frame(width: 20, height: 20)
                             .padding(10)
@@ -118,7 +120,7 @@ struct MapView: View {
                     let renderer = MKPolylineRenderer(polyline: polyline)
                     renderer.lineWidth = 4
                     renderer.alpha = 0.7
-                    renderer.strokeColor = .systemBlue
+                    renderer.strokeColor = UIColor(theme.color)
                     return renderer
                 }
             }

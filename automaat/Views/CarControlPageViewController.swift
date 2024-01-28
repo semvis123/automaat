@@ -10,10 +10,12 @@ class CarControlPageViewController: UIViewController {
     var mapViewController: UIHostingController<CurrentCarView>?
     var api: APIController?
     var rental: Rental?
+    var theme: Theme?
     
-    convenience init(api: APIController) {
+    convenience init(api: APIController, theme: Theme) {
         self.init()
         self.api = api
+        self.theme = theme
     }
     
     func setActiveRental(rental: Rental) {
@@ -42,7 +44,7 @@ class CarControlPageViewController: UIViewController {
     }
     
     func openSheet() {
-        serviceSheet = UIHostingController(rootView: CarServiceView(api: api!, rental: rental!))
+        serviceSheet = UIHostingController(rootView: CarServiceView(api: api!, rental: rental!, theme: theme!))
         
         if let sheet = serviceSheet!.sheetPresentationController {
             sheet.detents = [.large()]
@@ -60,16 +62,22 @@ class CarControlPageViewController: UIViewController {
     func closeSheet() {
         dismiss(animated: true)
     }
+    
+    func setTheme(theme: Theme) {
+        self.theme = theme
+    }
 }
 
 struct CarControlPageView: UIViewControllerRepresentable {
     @EnvironmentObject var api: APIController
+    @Environment(\.theme) var theme: Theme
     
     func makeUIViewController(context: Context) -> CarControlPageViewController {
-        CarControlPageViewController(api: api)
+        CarControlPageViewController(api: api, theme: theme)
     }
     
     func updateUIViewController(_ uiViewController: CarControlPageViewController, context: Context) {
+        uiViewController.setTheme(theme: theme)
     }
     
     typealias UIViewControllerType = CarControlPageViewController

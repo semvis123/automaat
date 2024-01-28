@@ -8,7 +8,9 @@ Tunneling: ngrok
 
 ## Techniques
 **Secure storage**: Keychain, uses hardware encryption to ensure safe credential storing.  
-**Local storage**: Core Data (SQLite under the hood)  
+**Local storage**: Core Data (SQLite under the hood, contains cars, rentals, etc.)  
+(Keychain stores sensitive credentials, login tokens, etc.)  
+(Theme is stored in UserDefaults, user defaults is a key value store that is used to store small amounts of data)  
 **Development Mail server**: Inbucket (catches all mail and makes it available to read)  
 **Image fetching**: Google Search API (two requests per query, one for the search results, and another one for the image itself.)  
 This is made available through the ImageFetcher class.  
@@ -58,7 +60,6 @@ repo: mad-backend-generated
 - Mail templates changed to include the URI-scheme's of our app  (automagic://resetpassword?key=...)
 
 ## Further implementation ideas  
-Theming, not implemented due to complex theming system in SwiftUI. (would require a lot of work)
 I18n (internationalisation) translation strings. (would be possible but not a requirement)  
 SwiftUI previews (allows for easier ui development, but requires configuring some mock data for each view)
 

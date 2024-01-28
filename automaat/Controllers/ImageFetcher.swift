@@ -37,7 +37,7 @@ class ImageFetcher: ObservableObject {
             let decoder = JSONDecoder()
             let resp = try decoder.decode(ImageFetcherResponse.self, from: data)
             print(resp.items)
-            return resp.items.map { $0.link}
+            return resp.items.map { $0.link }
         } catch {
             print("Error info: \(error)")
             throw ImageFetchingError.API_ERROR

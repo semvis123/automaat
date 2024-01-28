@@ -40,6 +40,8 @@ class ColorOverlayRenderer: MKOverlayRenderer {
 struct CurrentCarView: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
     @EnvironmentObject var api: APIController
+    @Environment(\.theme) var theme: Theme
+    @Environment(\.colorScheme) var colorScheme
     @State var currPage: Int = 1
     @State var carImage: Data? = nil
     @State var pressedUnlockBtn = false
@@ -66,9 +68,10 @@ struct CurrentCarView: View {
     
     var body: some View {
         ZStack {
-            Color.init(hue: 0, saturation: 0, brightness: 0.05)
-                .ignoresSafeArea(edges: .top)
-            
+            if colorScheme == .dark {
+                Color.init(hue: 0, saturation: 0, brightness: 0.05)
+                    .ignoresSafeArea(edges: .top)
+            }
             if let car = car {
                 VStack {
                     HStack {
@@ -114,22 +117,22 @@ struct CurrentCarView: View {
                         ZStack {
                             Circle()
                                 .fill(.background)
-                                .shadow(color: .accent, radius: 30)
+                                .shadow(color: theme.color, radius: 30)
                                 .frame(width: 120,height: 120)
                             if pressedUnlockBtn {
                                 Circle()
-                                    .fill(.accent)
-                                    .shadow(color: .accent, radius: pressedUnlockBtnAnimating ? 30 : 0)
+                                    .fill(theme.color)
+                                    .shadow(color: theme.color, radius: pressedUnlockBtnAnimating ? 30 : 0)
                                     .frame(width: 120,height: 120)
                                     .transition(.scale)
                                     .animation(.smooth, value: UUID())
                             }
                             
                             Circle()
-                                .stroke(.accent, lineWidth: 3)
+                                .stroke(theme.color, lineWidth: 3)
                                 .frame(width: 120,height: 120)
                             Circle()
-                                .stroke(.accent)
+                                .stroke(theme.color)
                                 .frame(width: 110,height: 110)
                             
                             if pressedUnlockBtn {
@@ -174,7 +177,7 @@ struct CurrentCarView: View {
                                 VStack {
                                     Image(systemName: "car.fill")
                                         .resizable()
-                                        .foregroundColor(.white)
+                                        .foregroundColor(colorScheme == .dark ? .white : theme.color)
                                         .scaledToFit()
                                         .frame(width: 20, height: 20)
                                         .padding(10)

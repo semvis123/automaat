@@ -19,11 +19,11 @@
 - [x] ALS klant WIL IK een lijst met veelduldig gestelde vragen inzien ZODAT ik niet voor elke kleine vraag moet bellen of mailen
 - [x] ALS klant WIL IK dat een reservering automatisch omgezet wordt in een een verhuur ZODAT ik zonder extra handeling de auto daadwerkelijk kan huren
 - [x] ALS klant WIL IK me kunnen registreren ZODAT ik toegang krijg tot de functies van de app
+- [x] ALS klant WIL IK een thema kunnen kiezen ZODAT de UI van de app aansluit bij het onderliggende OS en/of andere apps
 - [ ] ALS klant WIL IK van de alle reserveringen en verhuren de status in kunnen zien ZODAT ik kan zien of er nog openstaande betalingen zijn
 - [ ] ALS klant WIL IK reserveringen kunnen maken/wijzigen/verwijderen ZODAT ik mijn reserveringen zelf kan beheren
 - [ ] ALS klant WIL IK bij aanvang en aan het einde van een verhuring de km stand op kunnen voeren ZODAT ik de gereden kilometers kan rapporteren en controleren
 - [ ] ALS klant WIL IK de huidige locatie van een auto terug kunnen sturen ZODAT ik kan laten weten waar de auto staat (bijv. aan het einde van de huurtermijn)
-- [ ] ALS klant WIL IK een thema kunnen kiezen ZODAT de UI van de app aansluit bij het onderliggende OS en/of andere apps
 
 ## Bedrijfs App
 

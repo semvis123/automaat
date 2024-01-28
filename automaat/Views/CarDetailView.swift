@@ -8,6 +8,7 @@ struct CarDetailView: View {
     @Binding var etaData: EtaData?
     @Binding var image: Data?
     @EnvironmentObject var imageFetcher: ImageFetcher
+    @Environment(\.theme) var theme: Theme
     
     let animation: Namespace.ID
     var mapViewController: MapPageViewController
@@ -25,7 +26,7 @@ struct CarDetailView: View {
                 Image(systemName: car.favorite ? "star.fill" :"star")
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .foregroundColor(.white )
+                    .foregroundColor(.themedColor)
                     .onTapGesture {
                         car.favorite = !car.favorite
                         try? PersistenceController.shared.container.viewContext.save()
@@ -88,6 +89,7 @@ struct CarDetailView: View {
                     .matchedGeometryEffect(id: "actionButton", in: animation)
                     .buttonStyle(.borderedProminent)
                     .font(.title2)
+                    .tint(theme.color)
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
@@ -114,6 +116,7 @@ struct CarDetailView: View {
                                         .foregroundStyle(.white)
                                         .padding(.bottom)
                                     Text(f.1)
+                                        .foregroundStyle(.white)
                                 }
                             }
                             .frame(width: 100, height: 150)

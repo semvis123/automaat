@@ -10,12 +10,17 @@
 		A81106DB2B61540B006CC4CC /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106DA2B61540B006CC4CC /* PasswordResetView.swift */; };
 		A81106DD2B616AA7006CC4CC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106DC2B616AA7006CC4CC /* RegistrationView.swift */; };
 		A81106E12B62BF15006CC4CC /* CarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106E02B62BF15006CC4CC /* CarFilterView.swift */; };
+		A81106E62B66811F006CC4CC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106E52B66811F006CC4CC /* Theme.swift */; };
+		A81106E82B66812A006CC4CC /* ThemeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106E72B66812A006CC4CC /* ThemeId.swift */; };
+		A81106EB2B668266006CC4CC /* SwiftUITheme in Frameworks */ = {isa = PBXBuildFile; productRef = A81106EA2B668266006CC4CC /* SwiftUITheme */; };
+		A81106ED2B66857D006CC4CC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81106EC2B66857D006CC4CC /* SettingsView.swift */; };
 		A817A5502B3384BB00ECF039 /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817A54F2B3384BB00ECF039 /* MapPageViewController.swift */; };
 		A817A5522B342B2A00ECF039 /* image+trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817A5512B342B2A00ECF039 /* image+trim.swift */; };
 		A819834D2B40590C00BD4D28 /* CarServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819834C2B40590C00BD4D28 /* CarServiceView.swift */; };
 		A81983542B419A1600BD4D28 /* CarControlPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81983532B419A1600BD4D28 /* CarControlPageViewController.swift */; };
 		A81983562B45B87500BD4D28 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81983552B45B87500BD4D28 /* Semaphore.swift */; };
 		A81983582B45C99000BD4D28 /* fetchedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81983572B45C99000BD4D28 /* fetchedImage.swift */; };
+		A8340E882B669F3F00FC5ADE /* CarListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8340E872B669F3F00FC5ADE /* CarListDetailView.swift */; };
 		A841F1F32B38CBC6005A30C1 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841F1F22B38CBC6005A30C1 /* CarDetailView.swift */; };
 		A841F1F52B38CC43005A30C1 /* CarSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841F1F42B38CC43005A30C1 /* CarSheetView.swift */; };
 		A841F1F72B38D514005A30C1 /* CarRentingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841F1F62B38D514005A30C1 /* CarRentingView.swift */; };
@@ -69,12 +74,16 @@
 		A81106DA2B61540B006CC4CC /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
 		A81106DC2B616AA7006CC4CC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		A81106E02B62BF15006CC4CC /* CarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterView.swift; sourceTree = "<group>"; };
+		A81106E52B66811F006CC4CC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A81106E72B66812A006CC4CC /* ThemeId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeId.swift; sourceTree = "<group>"; };
+		A81106EC2B66857D006CC4CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A817A54F2B3384BB00ECF039 /* MapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
 		A817A5512B342B2A00ECF039 /* image+trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "image+trim.swift"; sourceTree = "<group>"; };
 		A819834C2B40590C00BD4D28 /* CarServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServiceView.swift; sourceTree = "<group>"; };
 		A81983532B419A1600BD4D28 /* CarControlPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarControlPageViewController.swift; sourceTree = "<group>"; };
 		A81983552B45B87500BD4D28 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		A81983572B45C99000BD4D28 /* fetchedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchedImage.swift; sourceTree = "<group>"; };
+		A8340E872B669F3F00FC5ADE /* CarListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListDetailView.swift; sourceTree = "<group>"; };
 		A841F1F22B38CBC6005A30C1 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
 		A841F1F42B38CC43005A30C1 /* CarSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSheetView.swift; sourceTree = "<group>"; };
 		A841F1F62B38D514005A30C1 /* CarRentingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentingView.swift; sourceTree = "<group>"; };
@@ -121,6 +130,7 @@
 				A841F20D2B3DA873005A30C1 /* Map in Frameworks */,
 				A8D268C92B2B44CB000BDAB5 /* AVFoundation.framework in Frameworks */,
 				A8D268D02B2B4BC8000BDAB5 /* KeychainAccess in Frameworks */,
+				A81106EB2B668266006CC4CC /* SwiftUITheme in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +169,7 @@
 				A86A94B02B29D28600F49EB3 /* LoginView.swift */,
 				A81106DA2B61540B006CC4CC /* PasswordResetView.swift */,
 				A81106DC2B616AA7006CC4CC /* RegistrationView.swift */,
+				A81106EC2B66857D006CC4CC /* SettingsView.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 			children = (
 				A8BA9D512B266B24003BA0D0 /* CarListView.swift */,
 				A81106E02B62BF15006CC4CC /* CarFilterView.swift */,
+				A8340E872B669F3F00FC5ADE /* CarListDetailView.swift */,
 			);
 			name = Cars;
 			sourceTree = "<group>";
@@ -299,6 +311,8 @@
 				A817A5512B342B2A00ECF039 /* image+trim.swift */,
 				A81983552B45B87500BD4D28 /* Semaphore.swift */,
 				A8F5B4D12B580692006CC5B8 /* ObjectContext+deleteAll.swift */,
+				A81106E52B66811F006CC4CC /* Theme.swift */,
+				A81106E72B66812A006CC4CC /* ThemeId.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -322,6 +336,7 @@
 			packageProductDependencies = (
 				A8D268CF2B2B4BC8000BDAB5 /* KeychainAccess */,
 				A841F20C2B3DA873005A30C1 /* Map */,
+				A81106EA2B668266006CC4CC /* SwiftUITheme */,
 			);
 			productName = automaat;
 			productReference = A84B85ED2B2097770032CDC7 /* automaat.app */;
@@ -398,6 +413,7 @@
 			packageReferences = (
 				A8D268CE2B2B4BC8000BDAB5 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				A841F20B2B3DA873005A30C1 /* XCRemoteSwiftPackageReference "Map" */,
+				A81106E92B668266006CC4CC /* XCRemoteSwiftPackageReference "SwiftUITheme" */,
 			);
 			productRefGroup = A84B85EE2B2097770032CDC7 /* Products */;
 			projectDirPath = "";
@@ -450,6 +466,7 @@
 				A8D268CD2B2B4A4D000BDAB5 /* SecureStorage.swift in Sources */,
 				A841F1F52B38CC43005A30C1 /* CarSheetView.swift in Sources */,
 				A81983542B419A1600BD4D28 /* CarControlPageViewController.swift in Sources */,
+				A8340E882B669F3F00FC5ADE /* CarListDetailView.swift in Sources */,
 				A841F1F72B38D514005A30C1 /* CarRentingView.swift in Sources */,
 				A81983562B45B87500BD4D28 /* Semaphore.swift in Sources */,
 				A817A5522B342B2A00ECF039 /* image+trim.swift in Sources */,
@@ -467,8 +484,11 @@
 				A8D268C62B2B3F18000BDAB5 /* APIController.swift in Sources */,
 				A84B85FA2B2097790032CDC7 /* Persistence.swift in Sources */,
 				A8D268D42B2B7738000BDAB5 /* ApiResponses.swift in Sources */,
+				A81106ED2B66857D006CC4CC /* SettingsView.swift in Sources */,
 				A84B85F32B2097770032CDC7 /* ContentView.swift in Sources */,
+				A81106E82B66812A006CC4CC /* ThemeId.swift in Sources */,
 				A817A5502B3384BB00ECF039 /* MapPageViewController.swift in Sources */,
+				A81106E62B66811F006CC4CC /* Theme.swift in Sources */,
 				A86A94B92B29ECD800F49EB3 /* ImageFetcher.swift in Sources */,
 				A81106DB2B61540B006CC4CC /* PasswordResetView.swift in Sources */,
 			);
@@ -830,6 +850,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A81106E92B668266006CC4CC /* XCRemoteSwiftPackageReference "SwiftUITheme" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/semvis123/SwiftUITheme/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		A841F20B2B3DA873005A30C1 /* XCRemoteSwiftPackageReference "Map" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/semvis123/Map";
@@ -849,6 +877,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A81106EA2B668266006CC4CC /* SwiftUITheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A81106E92B668266006CC4CC /* XCRemoteSwiftPackageReference "SwiftUITheme" */;
+			productName = SwiftUITheme;
+		};
 		A841F20C2B3DA873005A30C1 /* Map */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A841F20B2B3DA873005A30C1 /* XCRemoteSwiftPackageReference "Map" */;

@@ -55,10 +55,11 @@ struct AccountView: View {
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button("Logout") {
-                            api.logout()
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gear")
                         }
-                        .buttonStyle(.bordered)
                     }
                 }
             }

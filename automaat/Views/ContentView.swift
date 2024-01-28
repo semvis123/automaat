@@ -34,12 +34,13 @@ struct ContentView: View {
                     Label("Account", systemImage: "person.crop.circle.fill")
                 }
                 .tag(4)
-        }.onOpenURL { url in
+        }
+        .accentColor(.themedColor)
+        .onOpenURL { url in
             if url.absoluteString.contains("passwordreset") || url.absoluteString.contains("activate") {
                 selection = 4
             }
         }
-
     }
     
 }

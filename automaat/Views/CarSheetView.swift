@@ -10,11 +10,12 @@ struct CarSheetView: View {
     @StateObject var car: Car
     @State var favorite = false
     @State var page = CarSheetPage.detail
+    @State var loadedCarImage: Data? = nil
     @Binding var etaData: EtaData?
     var imageFetcher: ImageFetcher
     let animation: Namespace.ID
-    @State var loadedCarImage: Data? = nil
     var mapViewController: MapPageViewController
+    var theme: Theme
     
     var body: some View {
         ZStack {
@@ -40,5 +41,6 @@ struct CarSheetView: View {
         }.animation(.default, value: page)
             .environmentObject(imageFetcher)
             .environmentObject(api)
+            .theme(theme)
     }
 }

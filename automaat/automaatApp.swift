@@ -1,7 +1,9 @@
 import SwiftUI
+import SwiftUITheme
 
 @main
 struct automaatApp: App {
+    @AppStorage("theme") private var themeId: ThemeId = .teal
     let persistenceController = PersistenceController.shared
     let apiController = APIController()
     let imageFetcher = ImageFetcher()
@@ -9,6 +11,7 @@ struct automaatApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .theme(themeId.theme)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(apiController)
                 .environmentObject(imageFetcher)

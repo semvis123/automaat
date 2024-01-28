@@ -27,14 +27,19 @@ struct CarFilter {
 
 
 struct CarFilterView: View {
+    @Environment(\.theme) var theme
     @Binding var filter: CarFilter
+    
     var sortOptions: [CarSortOption] = [
         CarSortOption(label: "ID", comparable: { $0.backendId }),
         CarSortOption(label: "Prijs", comparable: { $0.price }),
     ]
+    
+    
     var body: some View {
         List {
             Toggle("Favorieten", isOn: $filter.onlyFavorite)
+                .tint(theme.color)
             HStack {
                 Picker("Sorteer veld", selection: $filter.sortKey) {
                     ForEach(sortOptions, id: \.label) {

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct CarRentingView: View {
+    @Environment(\.theme) var theme: Theme
     @EnvironmentObject var api: APIController
     @EnvironmentObject var imageFetcher: ImageFetcher
     
@@ -52,6 +53,7 @@ struct CarRentingView: View {
                            label: {}
                 )
                 .datePickerStyle(.graphical)
+                .accentColor(theme.color)
             }
             .padding()
             if rentError {
@@ -79,16 +81,16 @@ struct CarRentingView: View {
                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
                         let request = UNNotificationRequest(identifier: "rentalReady", content: content, trigger: trigger)
                         try await UNUserNotificationCenter.current().add(request)
-                        
+                        mapViewController.closeSheet()                        
                     } catch {
                         rentError = true
                     }
-                    mapViewController.closeSheet()
                 }
             }) {
                 Text("Reserveer")
             }
             .buttonStyle(.borderedProminent)
+            .tint(theme.color)
             .font(.title2)
             .padding(.top, 20)
             .matchedGeometryEffect(id: "actionButton", in: animation)

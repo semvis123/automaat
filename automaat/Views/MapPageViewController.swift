@@ -6,15 +6,16 @@ class MapPageViewController: UIViewController, UISheetPresentationControllerDele
     var sheet: UISheetPresentationController?
     var carSheetViewController: UIHostingController<CarSheetView>?
     var mapViewController: UIHostingController<MapView>?
+    var theme: Theme?
     var onSheetClose: (() -> ())?
     var imageFetcher: ImageFetcher?
     
-    convenience init(animation: Namespace.ID, imageFetcher: ImageFetcher) {
+    convenience init(animation: Namespace.ID, imageFetcher: ImageFetcher, theme: Theme) {
         self.init()
         self.animation = animation
         self.imageFetcher = imageFetcher
+        self.theme = theme
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,8 @@ class MapPageViewController: UIViewController, UISheetPresentationControllerDele
                                                             etaData: etaData,
                                                             imageFetcher: imageFetcher!,
                                                             animation: animation!,
-                                                            mapViewController: self
+                                                            mapViewController: self,
+                                                            theme: theme!
                                                         )
         )
         
@@ -87,17 +89,23 @@ class MapPageViewController: UIViewController, UISheetPresentationControllerDele
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         onSheetClose?()
     }
+    
+    func setTheme(theme: Theme) {
+        self.theme = theme
+    }
 }
 
 struct MapPageView: UIViewControllerRepresentable {
     @EnvironmentObject var imageFetcher: ImageFetcher
-    var animation: Namespace.ID
+    @Environment(\.theme) private var theme
+    var animation: Namespace.ID    
     
     func makeUIViewController(context: Context) -> MapPageViewController {
-        MapPageViewController(animation: animation, imageFetcher: imageFetcher)
+        MapPageViewController(animation: animation, imageFetcher: imageFetcher, theme: theme)
     }
     
     func updateUIViewController(_ uiViewController: MapPageViewController, context: Context) {
+        uiViewController.setTheme(theme: theme)       
     }
     
     typealias UIViewControllerType = MapPageViewController

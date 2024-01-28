@@ -50,17 +50,19 @@ struct FetchedImage: View {
             ProgressView()
                 .onAppear{
                     Task {
-                        switch preset {
-                        case .Car:
-                            imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache)
-                        case .CarFront:
-                            imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache, front: true)
-                        case .BrandLogo:
-                            imageNonBinding = await imageFetcher.fetchBrandLogo(brand: car!.brand!)
-                        default:
-                            imageNonBinding = await imageFetcher.getImage(query: query, cache: cache)
+                        do {
+                            switch preset {
+                            case .Car:
+                                imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache)
+                            case .CarFront:
+                                imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache, front: true)
+                            case .BrandLogo:
+                                imageNonBinding = await imageFetcher.fetchBrandLogo(brand: car!.brand!)
+                            default:
+                                imageNonBinding = await imageFetcher.getImage(query: query, cache: cache)
+                            }
+                            loadedImage = imageNonBinding
                         }
-                        loadedImage = imageNonBinding
                     }
                 }
         }

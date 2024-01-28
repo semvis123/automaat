@@ -17,6 +17,15 @@
         "branch" : "main",
         "revision" : "5bab776ad2c33b81e6262c4e23a4dc4f825bea84"
       }
+    },
+    {
+      "identity" : "swiftuitheme",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/semvis123/SwiftUITheme/",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f0d8cd9e85a167c999f2c36a86de71abbdaf04bd"
+      }
     }
   ],
   "version" : 2
