@@ -20,6 +20,8 @@ After they are sorted we fetch the first successful image and trim the transpare
 
 **Dependency injection**: using Environment and Environment objects  
 API controller is a service that handles all the api communication, it is available using an environment object.  
+(@Environment is a value property, and @EnvironmentObject is a reference property.)  
+
 **Splashscreen**: AI generated, loaded as a video. Transitions into the main content.  
 **URI Schemes**: URI Schemes are defined to correctly handle the account creation and password reset.  
 **Face ID / Biometric identification**: used as a replacement for the 2fa requirement  

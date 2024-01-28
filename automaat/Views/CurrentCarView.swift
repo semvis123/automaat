@@ -207,20 +207,22 @@ struct CurrentCarView: View {
         }
         .onAppear() {
             Task {
-                try await api.waitForRefresh()
-                rental = api.rentals.first(where: {
-                    $0.from != nil && Calendar.current.isDateInToday($0.from!) &&
-                    $0.state == "ACTIVE"
-                })
-                
-                if let rental = rental {
-                    car = api.cars.first(where: { $0.backendId == rental.car })
-                    regionVar = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: car!.latitude!.doubleValue, longitude: car!.longitude!.doubleValue),
-                                                   latitudinalMeters: 5000,
-                                                   longitudinalMeters: 5000)
-                    annotations = [CarMapAnnotation(car: car!)]
-                    viewController.setActiveRental(rental: rental)
-                }
+                do {
+                    try await api.waitForRefresh()
+                    rental = api.rentals.first(where: {
+                        $0.from != nil && Calendar.current.isDateInToday($0.from!) &&
+                        $0.state == "ACTIVE"
+                    })
+                    
+                    if let rental = rental {
+                        car = api.cars.first(where: { $0.backendId == rental.car })
+                        regionVar = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: car!.latitude!.doubleValue, longitude: car!.longitude!.doubleValue),
+                                                       latitudinalMeters: 5000,
+                                                       longitudinalMeters: 5000)
+                        annotations = [CarMapAnnotation(car: car!)]
+                        viewController.setActiveRental(rental: rental)
+                    }
+                } catch {}
             }
         }
     }
