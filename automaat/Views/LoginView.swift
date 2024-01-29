@@ -22,6 +22,7 @@ struct LoginView: View {
                 TextField("Username", text: $username)
                     .textFieldStyle(.roundedBorder)
                     .textContentType(.username)
+                    .autocapitalization(.none)
                 SecureField("Password", text: $password)
                     .textFieldStyle(.roundedBorder)
                     .textContentType(.password)

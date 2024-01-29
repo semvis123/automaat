@@ -210,6 +210,9 @@ class APIController: ObservableObject {
             "latitude": car.latitude!.doubleValue,
             "longitude": car.longitude!.doubleValue,
             "state": "ACTIVE",
+            "customer": [
+                "id": customerInfo?.id,
+            ],
             "car": [
                 "id": car.backendId
             ]

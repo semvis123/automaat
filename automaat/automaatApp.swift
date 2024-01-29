@@ -4,10 +4,10 @@ import SwiftUITheme
 @main
 struct automaatApp: App {
     @AppStorage("theme") private var themeId: ThemeId = .teal
+    @StateObject var apiController = APIController()
+    @StateObject var imageFetcher = ImageFetcher()
     let persistenceController = PersistenceController.shared
-    let apiController = APIController()
-    let imageFetcher = ImageFetcher()
-
+    
     var body: some Scene {
         WindowGroup {
             SplashView()

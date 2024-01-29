@@ -13,10 +13,16 @@ struct CarListItemView: View {
         } label: {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    FetchedImage(preset: .BrandLogo, car: car)
-                        .colorInvert()
-                        .frame(width: 30, height: 30)
-                        .padding(3)
+                    if (colorScheme == .light) {
+                        FetchedImage(preset: .BrandLogo, car: car)
+                            .colorInvert()
+                            .frame(width: 30, height: 30)
+                            .padding(3)
+                    } else {
+                        FetchedImage(preset: .BrandLogo, car: car)
+                            .frame(width: 30, height: 30)
+                            .padding(3)
+                    }
                     FetchedImage(preset: .Car, car: car, loadedImage: $carImage)
                         .frame(width: 130, height: 80)
                         .padding(.vertical, 3)

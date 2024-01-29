@@ -29,6 +29,28 @@ struct CustomerInfoResponse: Codable {
     var lastName, firstName, from: String?
 }
 
+struct InspectionResponseElement: Codable {
+    var id: Int
+    var code: String?
+    var odometer: Int?
+    var result: String?
+    var photo: String?
+    var photoContentType: String?
+    var photos: [String]?
+    var repairs: [String]?
+    var cars: [CarResponseElement]?
+}
+
+struct OptionalRepairResponse: Codable {
+    var id: Int?
+    var description: String?
+    var repairStatus: String?
+    var dateCompleted: String?
+    var car: CarResponseElement?
+    var employee: CustomerInfoResponse?
+    var inspection: InspectionResponseElement?
+}
+
 struct CarResponseElement: Codable {
     var id: Int64
     var brand, model: String?
@@ -39,7 +61,20 @@ struct CarResponseElement: Codable {
     var price, nrOfSeats: Int64?
     var body: CarBody?
     var longitude, latitude: Float?
-    var inspections, repairs, rentals: [String]? // guessed
+    var inspections: [InspectionResponseElement]?
+    var repairs: [OptionalRepairResponse]?
+    var rentals: [OptionalRentalResponse]?
+}
+
+struct OptionalRentalResponse: Codable {
+    var id: Int64
+    var code: String?
+    var longitude, latitude: Double?
+    var fromDate, toDate: String?
+    var state: String?
+    var inspections: [InspectionResponseElement]?
+    var customer : CustomerInfoResponse?
+    var car: CarResponseElement?
 }
 
 struct RentalsResponseElement: Codable  {
@@ -48,7 +83,8 @@ struct RentalsResponseElement: Codable  {
     var longitude, latitude: Double
     var fromDate, toDate: String
     var state: String?
-    var inspections, customer : [String]?
+    var inspections: [InspectionResponseElement]?
+    var customer: CustomerInfoResponse?
     var car: CarResponseElement?
 }
 

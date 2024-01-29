@@ -22,7 +22,7 @@ struct CarMapAnnotation: Identifiable, Equatable {
         return lhs.id == rhs.id
     }
     init(car: Car) {
-        self.coordinate = .init(latitude: CLLocationDegrees(truncating: car.latitude!), longitude: CLLocationDegrees(truncating: car.longitude!))
+        self.coordinate = .init(latitude: CLLocationDegrees(truncating: car.latitude ?? 0), longitude: CLLocationDegrees(truncating: car.longitude ?? 0))
         self.car = car
     }
 }
@@ -130,13 +130,9 @@ struct MapView: View {
             .onAppear {
                 locationManager.requestWhenInUseAuthorization()
                 Task {
-                    let ctx = PersistenceController.shared.container.viewContext
-                    let request = Car.fetchRequest()
-                    let cars = try? ctx.fetch(request)
-                    if let cars = cars {
-                        annotations = cars.map {
+                    try await api.waitForRefresh()
+                    annotations = api.cars.map {
                             CarMapAnnotation(car: $0)
-                        }
                     }
                 }
             }
