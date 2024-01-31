@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AutomaatWidget.Provider.getTimeline(in:completion:):AutomaatWidget+WidgetProvider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "car.brand">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ImageFetcher.getImageUrl(query:):ImageFetcher.swift">
          <PersistentStrings>
             <PersistentString

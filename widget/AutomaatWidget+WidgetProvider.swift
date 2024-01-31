@@ -1,6 +1,7 @@
 import Foundation
 import WidgetKit
 import CoreData
+import SwiftUI
 
 extension AutomaatWidget {
     struct Provider: TimelineProvider {
@@ -17,23 +18,25 @@ extension AutomaatWidget {
         }
         
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let refreshPolicy: TimelineReloadPolicy = .after(Calendar.current.date(byAdding: .minute, value: 15, to: .now) ?? .now)
             guard let rental = fetchRental() else {
                 print("could not find rental")
-                completion(.init(entries: [.empty], policy: .never))
+                completion(.init(entries: [.empty], policy: refreshPolicy))
                 return
             }
             guard let car = fetchCar(rental: rental) else {
                 print("could not fetch car")
-                completion(.init(entries: [.empty], policy: .never))
+                completion(.init(entries: [.empty], policy: refreshPolicy))
                 return
             }
             Task {
+                let image = await ImageFetcher().fetchCarImage(car: car)
                 let entry = Entry(
                     rental: rental,
                     car: car,
-                    image: await ImageFetcher().fetchCarImage(car: car)
+                    image: UIImage(data: image)?.resized(toWidth: 300)
                 )
-                completion(.init(entries: [entry], policy: .never))
+                completion(.init(entries: [entry], policy: refreshPolicy))
             }
         }
     }

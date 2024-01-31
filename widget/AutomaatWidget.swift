@@ -14,9 +14,10 @@ struct AutomaatWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) {
             EntryView(entry: $0)
+                .widgetURL(URL(string: "automagic://current-car"))
         }
         .configurationDisplayName("Automagic Widget")
         .description("Huidige reservering.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
+        .supportedFamilies([.systemMedium])
     }
 }

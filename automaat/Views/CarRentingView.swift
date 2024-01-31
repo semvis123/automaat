@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct CarRentingView: View {
     @Environment(\.theme) var theme: Theme
@@ -81,7 +82,10 @@ struct CarRentingView: View {
                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
                         let request = UNNotificationRequest(identifier: "rentalReady", content: content, trigger: trigger)
                         try await UNUserNotificationCenter.current().add(request)
-                        mapViewController.closeSheet()                        
+                        // update widget
+                        WidgetCenter.shared.reloadAllTimelines()
+                        
+                        mapViewController.closeSheet()
                     } catch {
                         rentError = true
                     }

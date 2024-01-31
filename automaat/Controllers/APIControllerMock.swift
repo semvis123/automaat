@@ -73,7 +73,7 @@ class APIControllerMock: APIController {
             throw URLError(.badURL)
         }
         
-        guard let key = queryItems.first(where: { $0.name == "key" })?.value else {
+       guard (queryItems.first(where: { $0.name == "key" })?.value) != nil else {
             throw URLError(.badURL)
         }
     }
@@ -84,17 +84,12 @@ class APIControllerMock: APIController {
             throw URLError(.badURL)
         }
         
-        guard let key = queryItems.first(where: { $0.name == "key" })?.value else {
+       guard (queryItems.first(where: { $0.name == "key" })?.value) != nil else {
             throw URLError(.badURL)
         }
     }
     
     override func rentCar(car: Car, date: Date) async throws {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.autoupdatingCurrent
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
         let rental = Rental(context: persistanceCtx)
         rental.from = date
         rental.to = date

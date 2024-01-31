@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 import SwiftUITheme
 
 @main
@@ -20,6 +21,7 @@ struct automaatApp: App {
                         try await api.refreshData()
                         try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
                     }
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
         }
     }

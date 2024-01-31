@@ -40,6 +40,10 @@ struct ContentView: View {
             if url.absoluteString.contains("passwordreset") || url.absoluteString.contains("activate") {
                 selection = 4
             }
+            if url.absoluteString.contains("current-car") {
+                selection = 3
+            }
+
         }
     }
     
