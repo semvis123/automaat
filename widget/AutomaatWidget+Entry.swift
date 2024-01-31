@@ -26,7 +26,7 @@ extension AutomaatWidget {
                 }
                 if let rental = entry.rental, let fromDate = rental.from {
                     if Calendar.current.isDateInToday(fromDate) {
-                        Text("Auto staat klaar!")
+                        Text("Uw auto staat klaar!")
                             .font(.footnote)
                     } else {
                         Text("Beschikbaar vanaf \(fromDate.formatted(.dateTime.month().day()))")
