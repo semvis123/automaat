@@ -47,9 +47,7 @@ extension AutomaatWidget.Provider {
         guard let rentals = try? managedObjectContext.fetch(request) else {
             return nil
         }
-        let rental = rentals.sorted {
-            $0.from ?? .now < $1.from ?? .now
-        }.first(where: {
+        let rental = rentals.first(where: {
             $0.from != nil && (Calendar.current.isDateInToday($0.from!) || $0.from! > .now) &&
             $0.state == "ACTIVE"
         })
