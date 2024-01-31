@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "APIServiceMock.refreshDataLocal():APIServiceMock.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(automaat.Car)((automaat.Car)(null))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

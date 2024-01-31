@@ -4,7 +4,7 @@ import SwiftUITheme
 @main
 struct automaatApp: App {
     @AppStorage("theme") private var themeId: ThemeId = .teal
-    @StateObject var apiController = APIController()
+    @StateObject var api = APIController()
     @StateObject var imageFetcher = ImageFetcher()
     let persistenceController = PersistenceController.shared
     
@@ -13,12 +13,12 @@ struct automaatApp: App {
             SplashView()
                 .theme(themeId.theme)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(apiController)
+                .environmentObject(api)
                 .environmentObject(imageFetcher)
                 .onAppear {
                     Task {
-                        try await apiController.refreshData()
-                        let success = try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+                        try await api.refreshData()
+                        try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
                     }
                 }
         }

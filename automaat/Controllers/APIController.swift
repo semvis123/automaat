@@ -1,7 +1,6 @@
 import Foundation
 import CoreData
 
-
 class APIController: ObservableObject {
     let API_ROOT = "https://helped-clean-bream.ngrok-free.app/api/"
     
@@ -33,7 +32,7 @@ class APIController: ObservableObject {
     init() {
         loggedIn = accountInfo != nil && jwtToken != nil
     }
-
+    
     func waitForRefresh() async throws {
         await refreshSemaphore.wait()
         await refreshSemaphore.release()
@@ -59,7 +58,7 @@ class APIController: ObservableObject {
     
     func refreshDataBackend() async throws {
         let ctx = PersistenceController.shared.container.viewContext;
-
+        
         if loggedIn {
             let rentalResponse: [RentalsResponseElement] = try await getData(endpoint: "rentals", queryData: [
                 "customerId.equals": "\(customerInfo!.id!)"
@@ -69,7 +68,7 @@ class APIController: ObservableObject {
             dateFormatter.timeZone = TimeZone.current
             dateFormatter.dateFormat = "yyyy-MM-dd"
             try ctx.deleteAll(entity: "Rental")
-
+            
             print("got \(rentalResponse.count) rentals")
             for rentalEl in rentalResponse {
                 if rentalEl.car == nil {
@@ -85,10 +84,10 @@ class APIController: ObservableObject {
                 rental.latitude = NSDecimalNumber(value: rentalEl.latitude)
                 rental.longitude = NSDecimalNumber(value: rentalEl.longitude)
             }
-
+            
             try ctx.save()
         }
-
+        
         // create list of favorites such that we won't delete them
         var favorites: [Int64] = []
         for car in cars {
@@ -96,10 +95,10 @@ class APIController: ObservableObject {
                 favorites.append(car.backendId)
             }
         }
-                
+        
         let carList: CarListResponse = try await getData(endpoint: "cars")
         try ctx.deleteAll(entity: "Car")
-
+        
         for car in carList {
             let c = Car(context: ctx)
             c.backendId = car.id
@@ -118,7 +117,7 @@ class APIController: ObservableObject {
     
     func refreshDataLocal() throws {
         let ctx = PersistenceController.shared.container.viewContext
-    
+        
         let fetchRequestCars = Car.fetchRequest()
         cars = try ctx.fetch(fetchRequestCars)
         let fetchRequestRentals = Rental.fetchRequest()
@@ -145,7 +144,7 @@ class APIController: ObservableObject {
         
         try await refreshData()
     }
-
+    
     func register(username: String, password: String, firstName: String, lastName: String, email: String) async throws {
         try await postData(endpoint: "AM/register", data: [
             "login": username,
@@ -153,7 +152,7 @@ class APIController: ObservableObject {
             "firstName": firstName,
             "lastName": lastName,
             "email": email,
-//            "activated": true,
+            //            "activated": true,
             "langKey": "nl",
             "authorities": ["ROLE_USER"]
         ], auth: false)
@@ -166,33 +165,33 @@ class APIController: ObservableObject {
             throw URLError(.badServerResponse)
         }
     }
-
+    
     func completePasswordReset(url: URL, newPassword: String) async throws {
         guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: false),
               let queryItems = components.queryItems else {
             throw URLError(.badURL)
         }
-
+        
         guard let key = queryItems.first(where: { $0.name == "key" })?.value else {
             throw URLError(.badURL)
         }
-
+        
         let _ = try await postData(endpoint: "account/reset-password/finish", data: [
             "key": key,
             "newPassword": newPassword
         ])
     }
-
+    
     func activateAccount(url: URL) async throws {
         guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: false),
               let queryItems = components.queryItems else {
             throw URLError(.badURL)
         }
-
+        
         guard let key = queryItems.first(where: { $0.name == "key" })?.value else {
             throw URLError(.badURL)
         }
-
+        
         try await getData(endpoint: "activate", queryData: [
             "key": key
         ], auth: false)
@@ -237,11 +236,11 @@ class APIController: ObservableObject {
             "id": rental.backendId,
             "state": "RETURNED"
         ])
-
+        
         try ctx.save()
         try refreshDataLocal()
     }
-
+    
     func damageReport(rental: Rental, description: String, image: Data) async throws {
         let imageString = image.base64EncodedString()
         try await postData(endpoint: "inspections", data: [
@@ -261,17 +260,17 @@ class APIController: ObservableObject {
         accountInfo = nil
         customerInfo = nil
     }
-
+    
     private func createSession() -> URLSession {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         return session
     }
-
+    
     private func createRequest(endpoint: String, method: String, data: Data? = nil, auth: Bool = true, queryData: [String : String] = [:]) -> URLRequest {
         var url = URL(string: API_ROOT + endpoint)!
         url = url.appendingQueryParameters(queryData)
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -285,24 +284,24 @@ class APIController: ObservableObject {
     
     private func postData<T: Decodable>(endpoint: String, data: [String : Any], auth: Bool = true) async throws -> T {
         let request = createRequest(endpoint: endpoint, method: "POST", data: try JSONSerialization.data(withJSONObject: data), auth: auth)
-
+        
         let (data, _) = try await createSession().data(for: request)
         let obj = try JSONDecoder().decode(T.self, from: data)
         return obj
     }
-
+    
     private func postData(endpoint: String, data: [String : Any], auth: Bool = true) async throws {
         let request = createRequest(endpoint: endpoint, method: "POST", data: try JSONSerialization.data(withJSONObject: data), auth: auth)
-
+        
         let (_, _) = try await createSession().data(for: request)
     }
-
+    
     private func postRawData(endpoint: String, data: String, auth: Bool = true) async throws -> String {
         let request = createRequest(endpoint: endpoint, method: "POST", data: data.data(using: .utf8), auth: auth)
         
         let (data, _) = try await createSession().data(for: request)
         return String(data: data, encoding: .utf8)!
-    }    
+    }
     
     private func getData<T: Decodable>(endpoint: String, queryData: [String : String] = [:], auth: Bool = true) async throws -> T {
         let request = createRequest(endpoint: endpoint, method: "GET", auth: auth, queryData: queryData)
@@ -316,11 +315,11 @@ class APIController: ObservableObject {
         
         let (_, _) = try await createSession().data(for: request)
     }
-
+    
     private func patchData(endpoint: String, data: [String : Any], auth: Bool = true) async throws {
         let request = createRequest(endpoint: endpoint, method: "PATCH", data: try JSONSerialization.data(withJSONObject: data), auth: auth)
-
+        
         let (_, _) = try await createSession().data(for: request)
     }
-
+    
 }

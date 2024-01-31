@@ -2,27 +2,77 @@ import XCTest
 @testable import automaat
 
 final class automaatTests: XCTestCase {
-
+    private var persistanceCtx = PersistenceController(inMemory: true).container.viewContext
+    private var api: APIController!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        api = APIControllerMock(persistanceCtx: persistanceCtx)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testLogin() async throws {
+        var loginStatus = await api.loggedIn
+        XCTAssert(!loginStatus)
+        try! await api.login(username: "test", password: "test")
+        loginStatus = await api.loggedIn
+        XCTAssert(loginStatus)
+    }
+    
+    func testCars() async throws {
+        try! await api.refreshData()
+    
+        var cars = await api.cars
+        let origCarCount = cars.count
+        
+        let car1 = Car(context: persistanceCtx)
+        car1.brand = "Honda"
+        car1.model = "Civic"
+        car1.licenseplate = "1-ABC-123"
+        car1.price = 100
+        car1.latitude = 52.1
+        car1.longitude = 4.1
+        car1.options = "RGB"
+        car1.backendId = 5
+        car1.fuel = "Diesel"
+        try! persistanceCtx.save()
+        
+        try! await api.refreshData()
+        
+        cars = await api.cars
+        XCTAssert(cars.count == origCarCount + 1)
+    }
+    
+    func testRental() async throws {
+        let car1 = Car(context: persistanceCtx)
+        car1.brand = "Honda"
+        car1.model = "Civic"
+        car1.licenseplate = "1-ABC-123"
+        car1.price = 100
+        car1.latitude = 52.1
+        car1.longitude = 4.1
+        car1.options = "RGB"
+        car1.backendId = 5
+        car1.fuel = "Diesel"
+        try! persistanceCtx.save()
+        
+        try! await api.refreshData()
+        let car = (await api.cars).first
+        
+        try await api.rentCar(car: car!, date: .now)
+        let rental = (await api.rentals).first(where: {
+            $0.car == car1.backendId
+        })
+        XCTAssert(rental != nil)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
+    func testRefreshDataPerformance() async throws {
         self.measure {
-            // Put the code you want to measure the time of here.
+            let exp = expectation(description: "Finished")
+            Task {
+                try await api.refreshData()
+                exp.fulfill()
+            }
+            wait(for: [exp], timeout: 200.0)
         }
     }
 
