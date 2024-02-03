@@ -216,6 +216,9 @@ struct CurrentCarView: View {
                     
                     if let rental = rental {
                         car = api.cars.first(where: { $0.backendId == rental.car })
+                        guard car != nil else {
+                            return
+                        }
                         regionVar = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: car!.latitude!.doubleValue, longitude: car!.longitude!.doubleValue),
                                                        latitudinalMeters: 5000,
                                                        longitudinalMeters: 5000)

@@ -5,6 +5,9 @@ import CoreData
 
 struct SettingsView: View {
     @AppStorage("theme") private var themeId: ThemeId = .red
+    @AppStorage("mock-api") private var mockedApi: Bool = false
+    @AppStorage("mock-images") private var mockedImages: Bool = false
+    
     @EnvironmentObject var api: APIController
     
     var body: some View {
@@ -45,10 +48,16 @@ struct SettingsView: View {
             }
             
             Section {
-                Button("Uitloggen") {
-                    api.logout()
+                Toggle("Mock afbeeldingen", isOn: $mockedImages)
+                Toggle("Mock api", isOn: $mockedApi)
+            }
+            if api.loggedIn {
+                Section {
+                    Button("Uitloggen") {
+                        api.logout()
+                    }
+                    .foregroundColor(.red)
                 }
-                .foregroundColor(.red)
             }
         }
     }

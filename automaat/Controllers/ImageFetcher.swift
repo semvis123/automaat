@@ -16,7 +16,7 @@ class ImageFetcher: ObservableObject {
     let semaphoreMapSemaphore = Semaphore()
     var semaphores: [String: Semaphore] = [:]
     
-    func getImageUrls(query: String) async throws -> [String] {
+    private func getImageUrls(query: String) async throws -> [String] {
         let sessionConfig = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
@@ -44,7 +44,7 @@ class ImageFetcher: ObservableObject {
         }
     }
     
-    func urlScore(url: String, query: String, positive: [String] = [], negative: [String] = []) -> Int {
+    private func urlScore(url: String, query: String, positive: [String] = [], negative: [String] = []) -> Int {
         var score = 0
         let lUrl = url.lowercased()
         for keyword in positive {
@@ -63,7 +63,7 @@ class ImageFetcher: ObservableObject {
     }
     
     
-    func sortUrls(urls: [String], query: String, positive: [String] = [], negative: [String] = []) -> [String] {
+    private func sortUrls(urls: [String], query: String, positive: [String] = [], negative: [String] = []) -> [String] {
         return urls.sorted {
             return self.urlScore(url: $0, query: query, positive: positive) > self.urlScore(url: $1, query: query, negative: negative)
         }

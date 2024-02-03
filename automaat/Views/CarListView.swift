@@ -27,9 +27,7 @@ struct CarListItemView: View {
                         .frame(width: 130, height: 80)
                         .padding(.vertical, 3)
                     Text("**\(car.model ?? "")**")
-//                        .foregroundStyle(.white)
                     Text("€\(car.price ) / dag")
-//                        .foregroundStyle(.white)
                 }
                 .padding()
             }

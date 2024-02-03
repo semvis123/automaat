@@ -14,20 +14,6 @@ struct AccountView: View {
                     Text("\(api.customerInfo?.firstName ?? "") \(api.customerInfo?.lastName ?? "")")
                         .padding()
                     
-                    // Button("clear brand logo cache") {
-                    //     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ImageCache")
-                    //     fetchRequest.predicate = NSPredicate(
-                    //         format: "query CONTAINS %@", "logo"
-                    //     )
-                    //     let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-                    //     try! PersistenceController.shared.container.viewContext.execute(batchDeleteRequest)
-                    // }
-                    
-                    // Button("refresh backend data") {
-                    //     Task {
-                    //         try await api.refreshData()
-                    //     }
-                    // }
                     List {
                         ForEach(api.rentals.sorted(by: { rental1, rental2 in
                             rental1.backendId > rental2.backendId
@@ -72,5 +58,5 @@ struct AccountView: View {
 
 
 #Preview {
-    AccountView().environmentObject(APIController())
+    AccountView().environmentObject(APIControllerMock(persistanceCtx: PersistenceController(inMemory: true).container.viewContext))
 }

@@ -2,7 +2,7 @@ import XCTest
 @testable import automaat
 
 final class automaatTests: XCTestCase {
-    private var persistanceCtx = PersistenceController(inMemory: true).container.viewContext
+    private var persistanceCtx = PersistenceController.preview.container.viewContext
     private var api: APIController!
     
     override func setUpWithError() throws {

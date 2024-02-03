@@ -93,6 +93,16 @@ struct LoginView: View {
                     isRegistering = false
                 }
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
+
         }
     }
     
@@ -112,5 +122,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView().environmentObject(APIController())
+    LoginView().environmentObject(APIControllerMock(persistanceCtx: PersistenceController.preview.container.viewContext))
 }

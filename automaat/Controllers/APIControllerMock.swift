@@ -15,11 +15,15 @@ class APIControllerMock: APIController {
         set { customerInfoMocked = newValue }
     }
     
+    @Published
+    private var loggedInMocked = false
     override var loggedIn: Bool {
         get {
-            accountInfo != nil
+            loggedInMocked
         }
-        set {}
+        set {
+            loggedInMocked = newValue
+        }
     }
     
     
@@ -45,18 +49,14 @@ class APIControllerMock: APIController {
         cars = try persistanceCtx.fetch(fetchRequestCars)
         let fetchRequestRentals = Rental.fetchRequest()
         rentals = try persistanceCtx.fetch(fetchRequestRentals)
-        
     }
     
     override func login(username: String, password: String) async throws {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Car")
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        try! persistanceCtx.execute(batchDeleteRequest)
-        
         let accResp: AccountInfoResponse = AccountInfoResponse(id: 0, login: username, firstName: "John", lastName: "Doe", email: "johndoe@mail.com", imageURL: nil, activated: true, langKey: nil, createdBy: nil, createdDate: nil, lastModifiedBy: nil, lastModifiedDate: nil, authorities: [])
         let custResp: CustomerInfoResponse = CustomerInfoResponse(id: 0, nr: 0, lastName: "Doe", firstName: "John")
         accountInfo = accResp
         customerInfo = custResp
+        loggedIn = true
         
         try await refreshData()
     }
@@ -114,5 +114,6 @@ class APIControllerMock: APIController {
    override func logout() {
         accountInfo = nil
         customerInfo = nil
+        loggedIn = false
     }
 }
