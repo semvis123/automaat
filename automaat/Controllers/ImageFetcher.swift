@@ -69,7 +69,7 @@ class ImageFetcher: ObservableObject {
         }
     }
     
-    func getImage(query: String, cache: Bool, positive: [String] = [], negative: [String] = []) async -> Data {
+    func getImage(query: String, cache: Bool, positive: [String] = [], negative: [String] = [], skipN: Int = 0) async -> Data {
         
         // only fetch the query once, let the other threads wait
         await semaphoreMapSemaphore.wait()
@@ -94,7 +94,7 @@ class ImageFetcher: ObservableObject {
         
         
         let entry = try? vCtx.fetch(request)
-        if entry != nil && entry!.count > 0 && entry![0].imageBlob != nil {
+        if entry != nil && entry!.count > 0 && entry![0].imageBlob != nil && cache {
             await querySemaphore.release()
             return entry![0].imageBlob!
         }
@@ -110,12 +110,25 @@ class ImageFetcher: ObservableObject {
             urls = sortUrls(urls: urls, query: query, positive: positive, negative: negative)
         }
         
+        var toSkip = skipN
         for url in urls {
             guard let data = try? Data(contentsOf: URL(string: url)!) else {
                 continue
             }
             guard let cleanData = UIImage(data: data)?.trimmingTransparentPixels()?.pngData() else {
                 continue
+            }
+            
+            if toSkip != 0 {
+                toSkip -= 1
+                continue
+            }
+
+            // delete old cache entries
+            if entry != nil && entry!.count > 0 {
+                for e in entry! {
+                    vCtx.delete(e)
+                }
             }
             
             let cacheEntry = ImageCache(context: vCtx)
@@ -131,58 +144,21 @@ class ImageFetcher: ObservableObject {
         return fallbackImage
     }
     
-    func fetchCarImage(car: Car, cache: Bool = true) async -> Data {
+    func fetchCarImage(car: Car, cache: Bool = true, skipN: Int = 0) async -> Data {
         let positive = ["vehicle", "dealer", ".com", "stock", "front", "images", "assets", "file", "resources", "carsized"]
         let negative = ["part", "repair", "shop", "clutch", "products", "http://"]
-        return await fetchCarImage(car: car, cache: cache, front: false, positive: positive, negative: negative)
+        return await fetchCarImage(car: car, cache: cache, front: false, positive: positive, negative: negative, skipN: skipN)
     }
     
-    func fetchCarImage(car: Car, cache: Bool = true, front: Bool = false, positive: [String] = [], negative: [String] = []) async -> Data {
-        return await getImage(query: "\(car.brand ?? "") \(car.model ?? "")\(front ? " front view" : "")", cache: true)
+    func fetchCarImage(car: Car, cache: Bool = true, front: Bool = false, positive: [String] = [], negative: [String] = [], skipN: Int = 0) async -> Data {
+        return await getImage(query: "\(car.brand ?? "") \(car.model ?? "")\(front ? " front view" : "")", cache: cache, skipN: skipN)
     }
     
-    func fetchBrandLogo(brand: String) async ->  Data {
+    func fetchBrandLogo(brand: String, cache: Bool = true, skipN: Int = 0) async ->  Data {
         let positive = ["Subaru-Logo-White-Transparent-BG-Web-Res.png?ssl=1", "dealers-honda-logo-png-white.png", "nissan-logo-2020-white.png", "Audi-Logo-White-Transparent-BG-Web-Res.png?ssl=1"]
         let negative: [String] = []
         
-        return await getImage(query: "\"\(brand) logo\" inurl:white transparent -color", cache: true, positive: positive, negative: negative)
-    }
-}
-
-
-protocol URLQueryParameterStringConvertible {
-    var queryParameters: String {get}
-}
-
-extension Dictionary : URLQueryParameterStringConvertible {
-    /**
-     This computed property returns a query parameters string from the given NSDictionary. For
-     example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
-     string will be @"day=Tuesday&month=January".
-     @return The computed parameters string.
-     */
-    var queryParameters: String {
-        var parts: [String] = []
-        for (key, value) in self {
-            let part = String(format: "%@=%@",
-                              String(describing: key).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
-                              String(describing: value).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-            parts.append(part as String)
-        }
-        return parts.joined(separator: "&")
-    }
-    
-}
-
-extension URL {
-    /**
-     Creates a new URL by adding the given query parameters.
-     @param parametersDictionary The query parameter dictionary to add.
-     @return A new URL.
-     */
-    func appendingQueryParameters(_ parametersDictionary : Dictionary<String, String>) -> URL {
-        let URLString : String = String(format: "%@?%@", self.absoluteString, parametersDictionary.queryParameters)
-        return URL(string: URLString)!
+        return await getImage(query: "\"\(brand) logo\" inurl:white transparent -color", cache: cache, positive: positive, negative: negative, skipN: skipN)
     }
 }
 

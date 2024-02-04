@@ -139,8 +139,8 @@ class APIController: ObservableObject {
         jwtToken = jwtResp.idToken
         let accResp: AccountInfoResponse = try await getData(endpoint: "account")
         let custResp: CustomerInfoResponse = try await getData(endpoint: "AM/me")
-        accountInfo = accResp
         customerInfo = custResp
+        accountInfo = accResp
         
         try await refreshData()
     }

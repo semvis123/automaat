@@ -39,7 +39,7 @@ class ColorOverlayRenderer: MKOverlayRenderer {
 
 struct CurrentCarView: View {
     @EnvironmentObject var imageFetcher: ImageFetcher
-    @EnvironmentObject var api: APIController
+    var api: APIController
     @Environment(\.theme) var theme: Theme
     @Environment(\.colorScheme) var colorScheme
     @State var currPage: Int = 1

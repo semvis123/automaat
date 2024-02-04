@@ -58,7 +58,7 @@ extension AutomaatWidget.Entry {
 }
 
 extension UIImage {
-    func resized(toWidth width: CGFloat, isOpaque: Bool = true) -> UIImage? {
+    func resized(toWidth width: CGFloat, isOpaque: Bool = false) -> UIImage? {
         let canvas = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
         let format = imageRendererFormat
         format.opaque = isOpaque

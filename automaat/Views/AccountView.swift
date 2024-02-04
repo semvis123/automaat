@@ -26,10 +26,14 @@ struct AccountView: View {
                                         .frame(width: 50, height: 50)
                                     Text("\(car.brand ?? "") \(car.model ?? "")")
                                         .frame(maxWidth: 200)
-                                }
-                                Spacer()
-                                if rental.from != nil && rental.to != nil {
-                                    Text(rental.from!.formatted(.dateTime.day().month()))
+                                    Spacer()
+                                    if rental.from != nil && rental.to != nil {
+                                        Text(rental.from!.formatted(.dateTime.day().month()))
+                                    }
+                                } else {
+                                    // assume it is still loading
+                                    ProgressView()
+                                        .progressViewStyle(LinearProgressViewStyle())
                                 }
                             }
                         }

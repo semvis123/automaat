@@ -647,5 +647,257 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "907EB707-083B-4EF1-8787-7B054DE9B3BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Views/fetchedImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "907EB707-083B-4EF1-8787-7B054DE9B3BE - b7a8a753e06ed886"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in automaat.FetchedImage.body.getter : some"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "907EB707-083B-4EF1-8787-7B054DE9B3BE - b7a8a753e06ed886"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in automaat.FetchedImage.body.getter : some"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "907EB707-083B-4EF1-8787-7B054DE9B3BE - b7a8a753e06ed886"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in automaat.FetchedImage.body.getter : some"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C207CE5-A008-4F92-B1A1-97F8905DABC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Views/fetchedImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9C207CE5-A008-4F92-B1A1-97F8905DABC9 - 65a3a32ae9cc94c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in automaat.FetchedImage.body.getter : some"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "9C207CE5-A008-4F92-B1A1-97F8905DABC9 - 65a3a32ae9cc94c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in automaat.FetchedImage.body.getter : some"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A8C8250-7BB2-4861-97F1-B72124FD97ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Views/fetchedImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "loadImage(cache:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A8C8250-7BB2-4861-97F1-B72124FD97ED - 9f7a862e3348c6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "8A8C8250-7BB2-4861-97F1-B72124FD97ED - 8cb2cc9379b79dc5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "8A8C8250-7BB2-4861-97F1-B72124FD97ED - fc289a1176a9c36f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F40CF7F6-B23E-4396-B3AE-F27AC4CD151E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "automaat/Views/fetchedImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "loadImage(cache:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F40CF7F6-B23E-4396-B3AE-F27AC4CD151E - fc289a1176a9c467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "F40CF7F6-B23E-4396-B3AE-F27AC4CD151E - b36184c1d82d0179"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "F40CF7F6-B23E-4396-B3AE-F27AC4CD151E - 665af6f02ba6427b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "F40CF7F6-B23E-4396-B3AE-F27AC4CD151E - da93e0a0bddbff7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for closure #1 @Sendable () async -&gt; () in automaat.FetchedImage.loadImage(cache: Swift.Bool) -&gt; ()"
+                  moduleName = "automaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semvi/Documents/GitHub/automaat/automaat/Views/fetchedImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

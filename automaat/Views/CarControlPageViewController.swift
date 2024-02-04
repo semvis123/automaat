@@ -25,7 +25,7 @@ class CarControlPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = UIHostingController(rootView: CurrentCarView(viewController: self))
+        let vc = UIHostingController(rootView: CurrentCarView(api: api!, viewController: self))
         mapViewController = vc
         let swiftuiView = vc.view!
         swiftuiView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +66,9 @@ class CarControlPageViewController: UIViewController {
     func setTheme(theme: Theme) {
         self.theme = theme
     }
+    func setApi(api: APIController) {
+        self.api = api
+    }
 }
 
 struct CarControlPageView: UIViewControllerRepresentable {
@@ -78,6 +81,7 @@ struct CarControlPageView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: CarControlPageViewController, context: Context) {
         uiViewController.setTheme(theme: theme)
+        uiViewController.setApi(api: api)
     }
     
     typealias UIViewControllerType = CarControlPageViewController

@@ -44,6 +44,8 @@
 		A84288532B6A5F3800B24442 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84288522B6A5F3700B24442 /* APIController.swift */; };
 		A84288552B6A62BF00B24442 /* APIControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84288542B6A62BF00B24442 /* APIControllerMock.swift */; };
 		A84288572B6E5EA500B24442 /* ImageFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84288562B6E5EA500B24442 /* ImageFetcherMock.swift */; };
+		A84288592B7015EF00B24442 /* URL+queryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84288582B7015EE00B24442 /* URL+queryParams.swift */; };
+		A842885A2B70164A00B24442 /* URL+queryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84288582B7015EE00B24442 /* URL+queryParams.swift */; };
 		A8439FA72B49D30C000DE5C4 /* CarDamageReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8439FA62B49D30C000DE5C4 /* CarDamageReportView.swift */; };
 		A84B85F12B2097770032CDC7 /* automaatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B85F02B2097770032CDC7 /* automaatApp.swift */; };
 		A84B85F32B2097770032CDC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B85F22B2097770032CDC7 /* ContentView.swift */; };
@@ -140,6 +142,7 @@
 		A84288522B6A5F3700B24442 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		A84288542B6A62BF00B24442 /* APIControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIControllerMock.swift; sourceTree = "<group>"; };
 		A84288562B6E5EA500B24442 /* ImageFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherMock.swift; sourceTree = "<group>"; };
+		A84288582B7015EE00B24442 /* URL+queryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryParams.swift"; sourceTree = "<group>"; };
 		A8439FA62B49D30C000DE5C4 /* CarDamageReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDamageReportView.swift; sourceTree = "<group>"; };
 		A84B85ED2B2097770032CDC7 /* automaat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = automaat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84B85F02B2097770032CDC7 /* automaatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = automaatApp.swift; sourceTree = "<group>"; };
@@ -394,6 +397,7 @@
 				A8F5B4D12B580692006CC5B8 /* ObjectContext+deleteAll.swift */,
 				A81106E52B66811F006CC4CC /* Theme.swift */,
 				A81106E72B66812A006CC4CC /* ThemeId.swift */,
+				A84288582B7015EE00B24442 /* URL+queryParams.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -570,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A842885A2B70164A00B24442 /* URL+queryParams.swift in Sources */,
 				A806214E2B699D670052C73A /* ImageFetcherResponse.swift in Sources */,
 				A80621432B6987270052C73A /* AutomaatWidget+WidgetProvider.swift in Sources */,
 				A806214C2B699D300052C73A /* Semaphore.swift in Sources */,
@@ -623,6 +628,7 @@
 				A81106E62B66811F006CC4CC /* Theme.swift in Sources */,
 				A86A94B92B29ECD800F49EB3 /* ImageFetcher.swift in Sources */,
 				A81106DB2B61540B006CC4CC /* PasswordResetView.swift in Sources */,
+				A84288592B7015EF00B24442 /* URL+queryParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,10 @@ struct FetchedImage: View {
     var query: String = ""
     var preset: ImageFetchMode = .Query
     var car: Car? = nil
-    var cache = true
     var sortUrls = false
+    var reloadOnPress = false
+    @State var cache = true
+    @State var skipN = 0
     @State var imageNonBinding: Data? = nil
     @Binding var loadedImage: Data?
 
@@ -46,25 +48,35 @@ struct FetchedImage: View {
             Image(uiImage: UIImage(data: loadedImage ?? imageNonBinding!)!)
                 .resizable()
                 .scaledToFit()
+                .onLongPressGesture {
+                    cache = false
+                    skipN += 1
+                    loadedImage = nil
+                    imageNonBinding = nil
+                }
         } else {
             ProgressView()
                 .onAppear{
-                    Task {
-                        do {
-                            switch preset {
-                            case .Car:
-                                imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache)
-                            case .CarFront:
-                                imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache, front: true)
-                            case .BrandLogo:
-                                imageNonBinding = await imageFetcher.fetchBrandLogo(brand: car!.brand!)
-                            default:
-                                imageNonBinding = await imageFetcher.getImage(query: query, cache: cache)
-                            }
-                            loadedImage = imageNonBinding
-                        }
-                    }
+                    loadImage(cache: cache)
                 }
+        }
+    }
+    
+    func loadImage(cache: Bool) {
+        Task {
+            do {
+                switch preset {
+                case .Car:
+                    imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache, skipN: skipN)
+                case .CarFront:
+                    imageNonBinding = await imageFetcher.fetchCarImage(car: car!, cache: cache, front: true, skipN: skipN)
+                case .BrandLogo:
+                    imageNonBinding = await imageFetcher.fetchBrandLogo(brand: car!.brand!, cache: cache, skipN: skipN)
+                default:
+                    imageNonBinding = await imageFetcher.getImage(query: query, cache: cache, skipN: skipN)
+                }
+                loadedImage = imageNonBinding
+            }
         }
     }
 }
