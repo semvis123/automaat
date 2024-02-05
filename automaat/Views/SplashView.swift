@@ -51,11 +51,11 @@ struct PlayerView: UIViewRepresentable {
 struct SplashView: View {
     @State var isActive: Bool = false
     @State var playing: Bool = false
-    let dev = true
+    @AppStorage("hide-splashscreen") private var hideSplash: Bool = false
     
     var body: some View {
         ZStack {
-            if self.isActive || dev {
+            if self.isActive || hideSplash {
                 ContentView()
             } else {
                 PlayerView(playing: $playing)

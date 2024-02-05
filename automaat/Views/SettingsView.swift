@@ -7,6 +7,7 @@ struct SettingsView: View {
     @AppStorage("theme") private var themeId: ThemeId = .red
     @AppStorage("mock-api") private var mockedApi: Bool = false
     @AppStorage("mock-images") private var mockedImages: Bool = false
+    @AppStorage("hide-splashscreen") private var hideSplash: Bool = false
     
     @EnvironmentObject var api: APIController
     
@@ -50,6 +51,7 @@ struct SettingsView: View {
             Section {
                 Toggle("Mock afbeeldingen", isOn: $mockedImages)
                 Toggle("Mock api", isOn: $mockedApi)
+                Toggle("Verberg splashscreen", isOn: $hideSplash)
             }
             if api.loggedIn {
                 Section {
