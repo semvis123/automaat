@@ -7,7 +7,8 @@ enum ImageFetchingError: Error {
 }
 
 class ImageFetcher: ObservableObject {
-    
+
+    // NOTE: This api key has been revoked, replace before actual usage.
     // Normally you do this server-side, but for this project it is fine.
     let API_URL = "https://customsearch.googleapis.com/customsearch/v1"
     let API_KEY = "AIzaSyDSLLmKNRoeVs1-0B5soQD9L52Uoi7_EN8"
