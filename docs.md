@@ -5,7 +5,7 @@ Programming language: Swift and SwiftUI
 Backend: provided JHipster  
 Mail server: Inbucket with port 25 exposed using docker  
 Tunneling: ngrok  
-mockup: (https://www.figma.com/file/5qulfKMi0q19twlHDl4xfF/Untitled?type=design&node-id=0%3A1&mode=design&t=HKeym6SHn3RI94VA-1)[https://www.figma.com/file/5qulfKMi0q19twlHDl4xfF/Untitled?type=design&node-id=0%3A1&mode=design&t=HKeym6SHn3RI94VA-1]
+mockup: [https://www.figma.com/file/5qulfKMi0q19twlHDl4xfF/Untitled?type=design&node-id=0%3A1&mode=design&t=HKeym6SHn3RI94VA-1](https://www.figma.com/file/5qulfKMi0q19twlHDl4xfF/Untitled?type=design&node-id=0%3A1&mode=design&t=HKeym6SHn3RI94VA-1)
 
 ## Techniques
 **Secure storage**: Keychain, uses hardware encryption to ensure safe credential storing.  
